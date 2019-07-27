@@ -1,0 +1,33 @@
+<div class='top' align='right'>
+    <button (click)='home()'><img src='../../../../assets/images/home.png'/></button>
+    <button (click)='menu()'><img src='../../../../assets/images/menu.png'/></button>
+    <button (click)='logout()'><img src='../../../../assets/images/logout.png'/></button>
+  </div>
+  <div align='center'>
+    <div class='body'>
+      <table>
+        <tr>
+          <td>Enter Item No:</td>
+          <td><input [(ngModel)]='ino'/></td>
+        </tr>
+        <tr *ngIf='status'>
+            <td>Enter Item Name:</td>
+            <td><input [(ngModel)]='iname' /></td>
+        </tr>
+        <tr *ngIf='status'>
+            <td>Enter Price:</td>
+            <td><input [(ngModel)]='price'/></td>
+        </tr>
+        <tr>
+          <td align="right">Add:<input type="radio" value="add" name="sel" (click)='add()'/></td>
+          <td>Remove:<input type="radio" value="add" name='sel' (click)='remove()'/> Update:<input type="radio" value="update" name='sel' (click)='update()'/> </td>
+
+        </tr>
+        <tr>
+          <td></td>
+          <td><button (click)='sub()'>Submit</button></td>
+        </tr>
+      </table>
+      <p *ngIf='msgstatus'>{{msg}}</p>
+    </div>
+  </div>

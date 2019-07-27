@@ -1,0 +1,41 @@
+<div align='center'>
+  <div class='topdiv' align='right'><button (click)='home()'><img src='../../assets/images/home.png'/></button></div>
+  <div class="tablebg">
+  <form #eform='ngForm'>
+  <table class='tablepos'>
+    <tr >
+      <td>
+        Enter Employee Id:
+      </td>
+      <td>
+        <input [(ngModel)]='ename' name='empname' #empname='ngModel' required pattern='[0-9]*'/>
+      </td>
+      <td>
+        <div *ngIf='empname.dirty' style="color:ghostwhite">
+          <div *ngIf='empname.errors?.required || empname.errors?.pattern'>Employee Id must be a number</div>
+        </div>
+      </td>
+    </tr>
+
+    <tr >
+     <td>
+       Enter Password:
+     </td>
+     <td>
+       <input type='password' [(ngModel)]='pwd' name="password" #password='ngModel' required/>
+     </td>
+     <td>
+        <div *ngIf='password.dirty' style="color:ghostwhite">
+          <div *ngIf='password.errors?.required'>password is required</div>
+        </div>
+      </td>
+   </tr>
+   <tr ><td><button (click)='login()' [disabled]='eform.invalid'>Login</button></td>
+    <td><button (click)='reset()' >Reset</button></td>
+  </tr>
+  <tr><td></td><td><a routerLink='/register' style='color:gainsboro'> Dont have an account. click here</a></td></tr>
+  </table>
+  <p *ngIf='showmsg' style='color:ghostwhite'>{{ msg }}</p>
+</form>
+</div>
+</div>

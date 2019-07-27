@@ -1,0 +1,40 @@
+<div align='right' class="top">
+  <button (click)='home()'><img src='../../../../../assets/images/home.png'/></button>
+  <button (click)='empmenu()'><img src='../../../../../assets/images/menu.png'/></button>
+  <button (click)='logout()'><img src="../../../assets/images/logout.png"/></button>
+</div>
+<div align='center'>
+<div class='bg'>
+  <table class='font'>
+    <tr>
+      <td>Item No:</td>
+      <td><input [(ngModel)]='itemno'  disabled/> </td>
+    </tr>
+    <tr>
+        <td>Item Name:</td>
+        <td><input [(ngModel)]='itemname' disabled/> </td>
+      </tr>
+      <tr>
+          <td>Price:</td>
+          <td><input [(ngModel)]='price' disabled/> </td>
+        </tr>
+
+        <tr>
+            <td>Quantity:</td>
+            
+            <td> <button (click)='minus()'>-</button>
+              <input name='q' size='1'  disabled [(ngModel)]='quan'/> 
+              <button (click)='plus()'>+</button>
+            </td>
+          </tr>
+          <tr ><td></td><td><button (click)='final()'>Add to cart</button></td></tr>
+  </table>
+  <p *ngIf='status' class="font">Added to Cart successfully </p>
+  <table *ngIf='status'>
+    <tr>
+      <td><button (click)='menu()'>add more to cart</button></td>
+      <td><button (click)='cart()'>buy now</button></td>
+    </tr>
+  </table>
+</div>
+</div>  

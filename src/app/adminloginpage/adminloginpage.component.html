@@ -1,0 +1,50 @@
+<div class='top' align='right'>
+  <button (click)='home()'><img src='../../assets/images/home.png'/></button>
+</div>
+<div align='center' >
+  <div class='bg'>
+    <form #aform='ngForm'>
+   <table class='font'>
+     <tr>
+       <td> 
+         Enter Admin ID:
+       </td>
+       <td>  
+         <input type ='text' [(ngModel)]='uname' #aname='ngModel' name='aname' minlength="4" maxlength="4" pattern="[0-9]*" required/>
+      </td>
+    
+      <td>
+        <div *ngIf='aname.dirty' >
+          <span *ngIf='aname.errors?.required'>admin id is required</span>
+          <span *ngIf='aname.errors?.pattern || aname.errors?.minlength'>Admin Id must contain 4 numbers only</span>
+        </div>
+        </td>
+      </tr>
+
+     <tr>
+      <td>    
+        Enter Password:
+     </td>
+      <td>   
+        <input type='password' [(ngModel)]='pwd' #password='ngModel' name='password'  required/>
+      </td>
+      <td>
+          <div *ngIf='password.dirty' >
+            <span *ngIf='password.errors?.required'>password is required</span>
+          </div>
+          </td>
+    </tr>   
+    <tr>
+      <td>   
+      <button (click)='login()' [disabled]='aform.invalid'>Login</button>
+     </td>
+     <td>   
+        <button (click)='reset()' >Reset</button>
+       </td>
+  </tr>  
+    
+    </table>   
+   <p *ngIf='showmsg' class='font'>{{ msg }}</p>
+  </form>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<div class='top' align='right'>
+  <button (click)='home()'><img src='../../../assets/images/home.png'/></button>
+  <button (click)='menu()'><img src='../../../assets/images/menu.png'/></button>
+  <button (click)='logout()'><img src="../../../assets/images/logout.png"/></button>
+</div>
+<div align='center'>
+<div class='bg'>
+    <h2 align='center' style="color: orange">Ongoing Orders</h2>
+  <table *ngIf='ongoingmsgstatus' class='font'>
+      <tr >
+          <td>you dont have any ongoing orders</td>
+       </tr>
+  </table>
+  <table *ngIf='ongoingorderstable' class='font'>
+      <tr *ngFor='let x of currentarr'>
+          <td>Order Id:</td>
+          <td><input value={{x.orderid}} #oid disabled size='3'/></td>
+          <td>Item name:</td>
+          <td><input value={{x.itemnames}} #iname disabled size='25'/></td>
+          <td>Price:</td>
+          <td><input value={{x.orderprice}} #iname disabled size='3'/></td>
+        <!--  <td><button (click)='feedback(oid.value)' >Give Rating</button></td>  -->
+        </tr>
+  </table>
+  <h2 align='center' style="color: orange">Past Orders</h2>
+   <table class='font' *ngIf='haveprevorders'>
+     <tr *ngFor='let x of pastarr'>
+       <td>Order Id:</td>
+       <td><input value={{x.orderid}} #oid disabled size='3'/></td>
+       <td>Item name:</td>
+       <td><input value={{x.itemnames}} #iname disabled size='25'/></td>
+       <td>Price:</td>
+       <td><input value={{x.orderprice}} #iname disabled size='3'/></td>
+       <td>Order Date:</td>
+       <td><input value={{x.date}} #iname disabled size='6'/></td>
+     <!--  <td><button (click)='feedback(oid.value)' >Give Rating</button></td>  -->
+     </tr>
+   </table>
+   <P *ngIf='nothaveorders' class="font">you haven't made any orders yet</P>
+</div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class='top' align='right'>
+  <button (click)='home()'><img src='../../../../assets/images/home.png'/></button>
+  <button (click)='menu()'><img src='../../../../assets/images/menu.png'/></button>
+  <button (click)='logout()'><img src='../../../../assets/images/logout.png'/></button>
+</div>
+<div align='center'>
+  <div class="body" >
+    <p *ngIf='showmsg'>No new orders</p>
+    <table>
+      <tr *ngFor='let x of list'>
+        <td>Order id:<input value={{x.orderid}} disabled #id size="2"/></td>
+        <td>Items:<input value={{x.itemnames}} disabled size="15"/></td>
+        <td>price:<input value={{x.orderprice}} disabled size="2"/></td>
+        <td>Employee Id:<input value={{x.empid}} disabled size="2"/></td>
+        <td>Name:<input value={{x.empname}} disabled size="10"/></td>
+        <td>Date:<input value={{x.date}} disabled size="6"/></td>
+        <td><button (click)='completed(id.value)'>completed</button></td>
+        <td><button (click)='cancelled(id.value)'>cancel</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

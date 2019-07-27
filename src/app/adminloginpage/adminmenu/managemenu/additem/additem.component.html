@@ -1,0 +1,18 @@
+<div class='top' align='right'>
+    <button (click)='home()'><img src='../../../../assets/images/home.png'/></button>
+    <button (click)='menu()'><img src='../../../../assets/images/menu.png'/></button>
+    <button (click)='logout()'><img src='../../../../assets/images/logout.png'/></button>
+  </div>
+  <div align='center'>
+    <div class='body'>
+      <p *ngIf="showmsg">All items are added to list</p>
+      <table>
+        <tr *ngFor='let x of addlist'>
+          <td>Item Id:<input value={{x.itemno}} #id disabled size="2"/></td>
+          <td>Item Name:<input value={{x.itemname}} disabled size="10"/></td>
+          <td>Item Price:<input value={{x.price}} disabled size="2"/></td>
+          <td><button (click)='addtolist(id.value)'>Add to List</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>

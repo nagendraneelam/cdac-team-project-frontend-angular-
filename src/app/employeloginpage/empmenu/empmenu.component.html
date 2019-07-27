@@ -1,0 +1,21 @@
+<div align='center' >
+  <div class='top' align='right'>
+    <button (click)='home()' ><img src='../../../assets/images/home.png'/></button>
+    <button (click)='logout()'><img src="../../../assets/images/logout.png"/></button>
+  </div>
+ <div class='bg'> 
+  <table  class='tablefont'>
+
+   <tr><td class="imageposleft"><a routerLink='/order' ><img src='../../../assets/images/order_food.png'/></a></td>
+  
+    <td class='imageposright'> <a routerLink='/empmenu' (click)='balance()'><img src='../../../assets/images/wallet.png'/></a></td></tr>
+   <tr ><td align='center' class='fontleft'>order food</td> <td align='center' >check balance</td></tr>
+     
+    <tr><td class="imageposleft">  <a routerLink='/pastorder' ><img src='../../../assets/images/past_orders.png'/></a></td>
+    
+      <td class='imageposright'>  <a routerLink='/cart' ><img src='../../../assets/images/cart.png'/></a></td></tr>
+      <tr><td align='center' class='fontleft' >your orders</td><td align='center' >My Cart</td></tr>
+    </table>
+    <p *ngIf='status' style="color:darkgreen">{{ msg }}</p>
+  </div>
+</div>
